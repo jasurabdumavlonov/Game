@@ -1,0 +1,37 @@
+//HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mosh.css">
+</head>
+<body>
+    <h1>Number guessing game</h1>
+    <p>Pick a # between 1-10</p>
+    <label for="">Enter a guess</label>
+    <input type="text" id="guessField">
+    <input type="submit" id="submitbutton">
+    <script src="mosh.js"></script>
+</body>
+</html>
+
+//Javascript
+
+const answer = Math.floor(Math.random() * 10 + 1)
+let guesses = 0
+document.getElementById("submitbutton").onclick = function(){
+  let guess = document.getElementById("guessField").value
+  guesses+=1
+  if(guess == answer){
+    alert(`${answer} is the number.It took you ${guesses} guesses`)
+  }
+  else if(guess<answer){
+    alert("Too small")
+  }
+  else{
+    alert("Too large")
+  }
+} 
